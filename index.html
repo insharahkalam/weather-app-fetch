@@ -1,63 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="770b805d5c99c7931366c2e84e88f251.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="770b805d5c99c7931366c2e84e88f251.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Weather App</title>
 </head>
-<body>
-    <div class="main">
-        <div class="section">
-            <div class="first">
-                <div class="head">
-                    <img src="./images/weather.png" alt="" width="80px">
-                    <h1>Weather App</h1>
-                    <h5>Developed By <a href="https://www.linkedin.com/in/insharah-kalam/" target="_blank">Insharah kalam</a></h5>
-                </div>
-                <div class="search">
-                    <form class="city">
-                        <input type="text" id="searchCity" placeholder="Search City">
-                        <button id="btn"><i class="fa-solid fa-magnifying-glass" style="color: #1f1f1f;"></i></button>
 
-                    </form>
-                
+<body>
+
+    <div class="main">
+
+        <div class="top">
+            <div class="left">
+                <div class="left-content">
+                    <div class="top-img"> <img width="50" height="50" src="./images/weatherapp.png" alt="">
+                        <h1>Weather App</h1>
+                    </div>
+                    <p id="dateTime"></p>
                 </div>
             </div>
-            <div class="weatherBoxMain" id="weatherBoxMain">
 
-                <!-- <div class="weatherBox">
-                    <div class="temp">
-                        <img src="clouds.png" alt="">
-                        <p>23°C</p>
-                        <p>Karachi</p>
-                    </div>
-    
-                    <div class="others">
-                        <div class="wind">
-                            <p>Wind</p>
-                            <p>15km/h</p>
-                        </div>
-                        <div class="press">
-                            <p>Pressure</p>
-                            <p>15km/h</p>
-                        </div>
-                        <div class="humi">
-                            <p>Humidity</p>
-                            <p>15km/h</p>
-                        </div>
-    
-                    </div>
-                </div> -->
+            <div class="right">
+                <input type="text" id="searchCity" placeholder="Enter City Name">
+                <button class="btn1" id="btn">Search</button>
+                <button class="btn2"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                        width="24px" fill="#000000">
+                        <path
+                            d="M440-42v-80q-125-14-214.5-103.5T122-440H42v-80h80q14-125 103.5-214.5T440-838v-80h80v80q125 14 214.5 103.5T838-520h80v80h-80q-14 125-103.5 214.5T520-122v80h-80Zm40-158q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-120q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-480q0-33-23.5-56.5T480-560q-33 0-56.5 23.5T400-480q0 33 23.5 56.5T480-400Zm0-80Z" />
+                    </svg></button>
             </div>
         </div>
 
+        <div id="notFound"></div>
+
+        <div class="center" id="center">
+            <div id="centerLeft"></div>
+            <div id="centerRight"></div>
+        </div>
+
+        <div class="bottom" id="bottom">
+            <div class="last-sec">
+                <div class="first">
+                    <p>Thursday</p>
+                    <img width="100" height="80" src="./images/clouds.png" alt="">
+                    <h5>23° - 14° </h5>
+                    <p>OverCast Clouds</p>
+                </div>
+                <div class="second">
+                    <p>Friday</p>
+                    <img width="100" height="80" src="./images/clear.png" alt="">
+                    <h5>26° - 18° </h5>
+                    <p>Clear Sky</p>
+                </div>
+                <div class="third">
+                    <p>Saturday</p>
+                    <img width="100" height="80" src="./images/haze2.png" alt="">
+                    <h5>25° - 17° </h5>
+                    <p>Haze</p>
+                </div>
+                <div class="fourth">
+                    <p>Sunday</p>
+                    <img width="100" height="80" src="./images/rainy.png" alt="">
+                    <h5>22° - 13° </h5>
+                    <p>Light Rain</p>
+                </div>
+                <div class="fifth">
+                    <p>Monday</p>
+                    <img width="100" height="80" src="./images/thernder.png" alt="">
+                    <h5>24° - 11° </h5>
+                    <p>Thenderstrom</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="spinner" style="display:none;">
+            <div class="loader"></div>
+        </div>
+
     </div>
+
     <script src="app.js"></script>
 </body>
+
 </html>
