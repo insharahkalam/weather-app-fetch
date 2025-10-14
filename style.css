@@ -21,7 +21,6 @@
 .top {
     width: 100%;
     height: 20vh;
-    /* background-color: antiquewhite; */
     padding: 20px 50px 20px 50px;
     display: flex;
     justify-content: space-between;
@@ -36,12 +35,18 @@
 }
 
 #notFound {
+    text-align: center;
+    color: rgb(255, 142, 142);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0;
+    height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
 }
+
 
 .left-content {
     display: flex;
@@ -56,7 +61,11 @@
 .right {
     display: flex;
     align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
 
 .right>input {
     width: 300px;
@@ -280,5 +289,186 @@
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+
+/* ============================= */
+/* 📱 MOBILE RESPONSIVE (max-width: 600px) */
+/* ============================= */
+@media (max-width: 600px) {
+    .main {
+        height: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .top {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .left-content h1 {
+        font-size: 28px;
+    }
+
+    .right {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
+
+    .right input {
+        flex: 1;
+        min-width: 140px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .right .btn1,
+    .right .btn2 {
+        width: auto;
+        height: 40px;
+        font-size: 14px;
+        padding: 0 12px;
+    }
+
+    .center {
+        flex-direction: column;
+        height: auto;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    #centerLeft {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .h1 {
+        font-size: 4rem;
+    }
+
+    .center-left {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    #centerRight {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    .bottom {
+        height: auto;
+        padding: 10px;
+    }
+
+    .last-sec {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .last-sec div {
+        width: 100%;
+    }
+
+    #notFound {
+        min-height: 25px;
+        margin-top: 8px;
+    }
+
+    .loader {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+    }
+}
+
+/* ============================= */
+/* 💻 TABLET RESPONSIVE (max-width: 900px) */
+/* ============================= */
+@media (max-width: 900px) {
+    .main {
+        height: 100%;
+        align-items: center;
+    }
+
+    .top {
+        flex-direction: column;
+        height: auto;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .left-content h1 {
+        font-size: 35px;
+    }
+
+    .right {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .right input {
+        width: 250px;
+        height: 45px;
+    }
+
+    .center {
+        flex-direction: column;
+        height: auto;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    #centerLeft {
+        justify-content: center;
+    }
+
+    .h1 {
+        font-size: 5rem;
+    }
+
+    .bottom {
+        height: auto;
+    }
+
+    .last-sec {
+        width: 95%;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .last-sec div {
+        width: 40%;
+    }
+
+    #notFound {
+        margin-top: 10px;
+        min-height: 30px;
+    }
+
+    .loader {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
     }
 }
