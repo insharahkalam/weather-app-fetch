@@ -23,7 +23,7 @@ async function inp(city) {
     spinner.style.display = "none";
 
     if (data.cod == 404) {
-      notFound.innerHTML = `<p style="color:white; font-size:28px;">${city} is Not Found!</p>`;
+      notFound.innerHTML = `<h3 style="color:white; font-size:28px;">${city} is Not Found!</h3>`;
       bottom.style.display = "none";
       center.style.display = "none";
       return false;
